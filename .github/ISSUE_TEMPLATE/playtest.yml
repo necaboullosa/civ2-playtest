@@ -1,0 +1,51 @@
+name: Relatar problema ou dar feedback
+description: Conte um erro, uma dificuldade de entender ou uma sugestão durante o playtest.
+labels: ["triagem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por testar o CIV2! Um relato por assunto é suficiente; não precisa saber programação.
+        Este espaço é público. Reveja o print antes de anexar e evite dados pessoais.
+        Só o tipo e a descrição são obrigatórios, além do título acima.
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Que tipo de relato é este?
+      options:
+        - Erro — algo não funcionou
+        - Dificuldade de entender — não ficou claro
+        - Sugestão — uma ideia para melhorar
+        - Não sei classificar
+    validations:
+      required: true
+  - type: textarea
+    id: relato
+    attributes:
+      label: O que aconteceu ou o que gostaria de melhorar?
+      description: Conte o que estava a fazer. Se conseguir, diga como chegar à mesma situação.
+      placeholder: Cliquei em Construir e não percebi se a obra começou…
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que esperava que acontecesse?
+      placeholder: Esperava ver uma confirmação ou um indicador na região.
+    validations:
+      required: false
+  - type: textarea
+    id: imagens
+    attributes:
+      label: Print ou vídeo (opcional)
+      description: Arraste, cole ou use o botão de anexar ficheiros deste campo. Pode deixar vazio.
+    validations:
+      required: false
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Versão, turno e aparelho
+      description: Se veio pelo botão do jogo, versão e turno já estão preenchidos. Acrescente aparelho e navegador se souber.
+      placeholder: "Versão 163; turno 8; iPhone; Safari"
+    validations:
+      required: false
